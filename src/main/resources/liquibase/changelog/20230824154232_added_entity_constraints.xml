@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="20230824154232-2" author="system">
+
+        <addForeignKeyConstraint baseColumnNames="job_listing_id"
+                                 baseTableName="job_request"
+                                 constraintName="fk_job_request__job_listing_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="job_listing"
+                                 />
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="job_request"
+                                 constraintName="fk_job_request__user_data_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user_data"
+        />
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="job_listing"
+                                 constraintName="fk_job_listing__user_data_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user_data"
+        />
+    </changeSet>
+</databaseChangeLog>

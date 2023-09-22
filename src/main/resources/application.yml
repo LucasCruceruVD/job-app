@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: "job-app"
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jobapp
+    username: postgres
+    password: postgres
+  liquibase:
+    enabled: true
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/jobapp
+    user: postgres
+    password: postgres
+    change-log: classpath:liquibase/master.xml
+  kafka:
+    bootstrap-servers: localhost:29092
+    job-request-topic: job-request
+    job-listing-topic: job-listing
+    user-topic: user
+  security:
+    jwt-secret: "jwt-secret"
+server:
+  port: 8181
+eureka:
+  client:
+    serviceUrl:
+      defaultZone                     : http://localhost:8761/eureka
+  instance:
+    preferIpAddress: true

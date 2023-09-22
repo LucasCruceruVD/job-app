@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="20230824154233-1" author="system">
+        <createTable tableName="job_listing">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="company_name" type="varchar(50)">
+                <constraints nullable="false" />
+            </column>
+            <column name="title" type="varchar(50)">
+                <constraints nullable="false" />
+            </column>
+            <column name="desc" type="varchar(1000)">
+                <constraints nullable="false" />
+            </column>
+            <column name="requirements" type="varchar(1000)">
+                <constraints nullable="false" />
+            </column>
+            <column name="qualifications" type="varchar(1000)">
+                <constraints nullable="false" />
+            </column>
+            <column name="min_salary" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="max_salary" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="hours_per_day" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="user_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
